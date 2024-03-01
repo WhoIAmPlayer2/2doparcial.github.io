@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: #343;
+}
+header{
+    text-align: center;
+    color: cadetblue;
+    font-size: 22px;
+}
+header h1{
+    text-transform: uppercase;
+    color: #196F3D;
+}
+header img{
+    width: 80%;
+    height: 70vh;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+p{
+    color: #5D6D7E;
+}
+h2{
+    text-align: center;
+    font-size: 28px;
+    color: #7DCEA0;
+}
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.card{
+    background: #A9DFBF;
+    border: 1px solid white;
+    line-height: 25px;
+    border-radius: 15px;
+    padding: 20px 30px;
+}
+.card h3{
+    text-align: center;
+}
+.card a{
+    color: #117864;
+}
+
+.formularios{
+    width: 80%;
+    margin: auto;
+    
+}
+form{
+    padding: 20px 50px;
+    font-size: 18px;
+    text-align: center;
+    height: 100%;
+    color: white;
+    background-color: #A9DFBF;
+}
+form input{
+    width:80%;
+    padding: 8px;
+    border: 1px solid gray;
+}
+form label input{
+    width: 30px;
+}
+form button{
+    display: block;
+    width: 80%;
+    padding: 10px;
+    color: white;
+    background: #196F3D;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid gray;
+    margin: auto;
+}
+.clothes{
+    text-align: center;
+}
+.clothes img{
+    width: 200px;
+}
+.clothes button{
+    width: 50%;
+    padding: 8px;
+    background-color: #117864;
+    color: white;
+}
+
+.gun img{
+    width: 200px;
+    max-height: 140px;
+}
+.gun{
+    text-align: center;
+}
+.gun button{
+    width: 50%;
+    padding: 8px;
+    background-color: #117864;
+    color: white;
+}
