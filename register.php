@@ -1,29 +1,33 @@
 <?php
 // Conexión a la base de datos
-$servername = "localhost";
-$username = "tu_usuario"; // Cambiar por tu usuario de la base de datos
-$password = "tu_contraseña"; // Cambiar por tu contraseña de la base de datos
-$database = "tu_base_de_datos"; // Cambiar por el nombre de tu base de datos
+$dbservername = "localhost";
+$dbuser = "root"; // Cambiar por tu usuario de la base de datos
+$dbpass = ""; // Cambiar por tu contraseña de la base de datos
+$db = "projectdb"; // Cambiar por el nombre de tu base de datos
  
-$conn = new mysqli($servername, $username, $password, $database);
- 
+$conn = new mysqli($dbservername, $dbuser, $dbpass, $db);
+
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conn) {
+    echo"<h1>Conexión establecida<h1>";
+} else{
+    echo"<h1>Conexión no establecida<h1>";
 }
  
 // Recuperar datos del formulario
-$nombre = $_POST['nombre'];
+$nombre = $_POST['name'];
 $email = $_POST['email'];
-$contrasena = $_POST['contrasena'];
+$contrasena = $_POST['pass'];
  
 // Insertar datos en la base de datos
-$sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
+$sql = "INSERT INTO usuarios (name, email, password) VALUES ('$nombre', '$email', '$contrasena')";
  
-if ($conn->query($sql) === TRUE) {
+$result= $conn->query($sql);
+
+if($result){
     echo "Registro exitoso";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error";
 }
  
 $conn->close();
