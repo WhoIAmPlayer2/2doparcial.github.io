@@ -8,24 +8,21 @@ $db = "projectdb"; // Cambiar por el nombre de tu base de datos
 $conn = new mysqli($dbservername, $dbuser, $dbpass, $db);
 
 // Verificar la conexión
-if ($conn) {
-    echo"<h1>Conexión establecida<h1>";
-} else{
-    echo"<h1>Conexión no establecida<h1>";
-}
+if (!$conn) {echo"<h1>Conexión no establecida<h1>";}
  
 // Recuperar datos del formulario
-$nombre = $_POST['name'];
-$email = $_POST['email'];
-$contrasena = $_POST['pass'];
+$nombre = $_POST['nombre'];
+$email = $_POST['correo'];
  
 // Insertar datos en la base de datos
-$sql = "INSERT INTO usuarios (name, email, password) VALUES ('$nombre', '$email', '$contrasena')";
- 
+$sql = "INSERT INTO newsusers (nombre, correo) VALUES ('$nombre', '$email')";
 $result= $conn->query($sql);
 
 if($result){
-    echo "Registro exitoso";
+    echo'<script type="text/javascript">
+    alert("Registro exitoso.");
+    window.location.href="index.html";
+    </script>';
 } else {
     echo "Error";
 }
