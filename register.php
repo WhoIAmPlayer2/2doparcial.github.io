@@ -21,7 +21,7 @@ $result= $conn->query($sql);
 if($result){
     echo'<script type="text/javascript">
     alert("Registro exitoso.");
-    window.location.href="index.html";
+    window.location.href="index.php";
     </script>';
 } else {
     echo "Error";

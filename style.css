@@ -160,3 +160,7 @@ form button:hover{
     background: #333;
     color: white;
 }
+
+.success{
+    color: #afa;
+}
