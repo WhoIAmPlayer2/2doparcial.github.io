@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View } from "react-native";
 import { Accelerometer } from "expo-sensors";
 import { useEffect, useState } from "react";
 
@@ -11,6 +11,7 @@ export const Sensors = () => {
 
   useEffect(() => {
     Accelerometer.addListener((accelerometerData) => {
+      console.log(accelerometerData);
       setData(accelerometerData);
     });
     Accelerometer.setUpdateInterval(1000);
@@ -20,11 +21,13 @@ export const Sensors = () => {
   }, []);
 
   return (
-      <View>
-      <Text>Sensores</Text>
-        <Text>X: {data.x}</Text>
-        <Text>Y: {data.y}</Text>
-        <Text>Z: {data.z}</Text>
-      </View>
+    <View>
+      Sensors
+      <view>
+        <Text>{data.x}</Text>
+        <Text>{data.y}</Text>
+        <Text>{data.z}</Text>
+      </view>
+    </View>
   );
 };
